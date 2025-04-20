@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HamidStudio</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="icon" href="Hamid_Studio-removebg-preview.png" >
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <h1 id="site-title">Hamid-Dev</h1>
+    <nav>
+      <a href="#about" data-en="About Me" data-ar="عنّي">About Me</a>
+      <a href="#contact" data-en="Contact" data-ar="اتصل بي">Contact</a>
+      <a href="support.html" data-en="Support" data-ar="الدعم الفني">Support</a>
+      <span class="lang-switch" onclick="toggleLang()">AR</span>
+      <span class="theme-switch" onclick="toggleTheme()">🌙</span>
+    </nav>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <h2 id="hero-title">Welcome to My Portfolio</h2>
+    <p id="hero-text">I'm a developer and content creator. I make games, courses, and interactive experiences.</p>
+  </section>
+
+  <!-- About Section -->
+  <section id="about" style="padding: 2rem; max-width: 800px; margin: auto;">
+    <h3 data-en="About Me" data-ar="عنّي">About Me</h3>
+    <p id="about-text">
+      Passionate software developer with experience in web development, game design, and educational content creation. I strive to build interactive and engaging experiences for users.
+    </p>
+  </section>
+
+  <!-- Contact / Footer -->
+  <footer id="contact">
+    <p data-en="Connect with me:" data-ar="تواصل معي:">Connect with me:</p>
+    <div class="social">
+      <a href="https://www.youtube.com/@HAMID-DEV-20">YouTube</a>
+      <a href="https://www.tiktok.com/@talebdzf20">tiktok</a>
+      <a href="https://www.instagram.com/hamiddev.exe/">Instagram</a>
+      <a href="https://discord.com/invite/abPw2cfZyZ">discord</a>
+      <a href="https://github.com/hamid-dev591">GitHub</a>
+      <a href="https://www.facebook.com/profile.php?id=61575126141507">facebook</a>
+    <p>&copy; 2025 hamiddev. All rights reserved.</p>
+  </footer>
+
+  
+
+  
+
+  <script>
+    let currentLang = 'en';
+    function toggleLang() {
+      currentLang = currentLang === 'en' ? 'ar' : 'en';
+      document.documentElement.dir = currentLang === 'ar' ? 'rtl' : 'ltr';
+      document.querySelector('.lang-switch').textContent = currentLang === 'en' ? 'AR' : 'EN';
+      document.querySelectorAll('[data-en]').forEach(el => {
+        el.textContent = el.dataset[currentLang];
+      });
+      document.getElementById('hero-title').textContent = currentLang === 'ar' ? 'مرحبًا بك في موقعي الشخصي' : 'Welcome to My Portfolio';
+      document.getElementById('hero-text').textContent = currentLang === 'ar'
+        ? 'أنا مطور ومُنشئ محتوى. أصمم ألعابًا ودورات وتجارب تفاعلية.'
+        : "I'm a developer and content creator. I make games, courses, and interactive experiences.";
+      document.getElementById('about-text').textContent = currentLang === 'ar'
+        ? 'مطور برمجيات شغوف بخبرة في تطوير الويب وتصميم الألعاب وإنشاء محتوى تعليمي. أهدف إلى إنشاء تجارب تفاعلية وجذابة.'
+        : 'Passionate software developer with experience in web development, game design, and educational content creation. I strive to build interactive and engaging experiences for users.';
+    }
+
+    function toggleTheme() {
+      document.body.classList.toggle('dark');
+    }
+  </script>
+<!-- Cloudflare Pages Analytics --><script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "2640b98d4b584e5c8f71c5bcd7e0c8bd"}'></script><!-- Cloudflare Pages Analytics --></body>
+</html>
